@@ -4,6 +4,9 @@
 Temp/
 Library/
 
+# Buildversions
+BuildVersion/
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #

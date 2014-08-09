@@ -8,6 +8,7 @@ namespace Assets.Scripts.Items
     {
         public TextMesh itemText;
         public bool isAndroid;
+        public AudioSource pickupHealth;
 
         private void Awake()
         {
@@ -19,46 +20,36 @@ namespace Assets.Scripts.Items
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-                
-                if (hit)
+                var hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+                if (hit && hit.collider == collider2D)
                 {
-                    if (hit.collider == collider2D)
-                    {
-                        if (!String.IsNullOrEmpty(itemText.text))
-                        {
-                            // Check inventory or something
-                            if (GameManager.health < 3)
-                            {
-                                itemText.text = "";
-                                GameManager.health++;
-                                GameManager.lives[GameManager.health - 1].enabled = true;
-                                Destroy(gameObject);
-                            }
-                            else
-                            {
-                                itemText.text = "Full health!";
-                            }
-                        }
-                    }
+                    TryPickItUp();
                 }
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
-                if (!String.IsNullOrEmpty(itemText.text))
+                TryPickItUp();
+            }
+        }
+
+        private void TryPickItUp()
+        {
+            if (!String.IsNullOrEmpty(itemText.text))
+            {
+                // Check inventory or something
+                if (GameManager.health < 3)
                 {
-                    // Check inventory or something
-                    if (GameManager.health < 3)
-                    {
-                        itemText.text = "";
-                        GameManager.health++;
-                        GameManager.lives[GameManager.health - 1].enabled = true;
-                        Destroy(gameObject);
-                    }
-                    else
-                    {
-                        itemText.text = "Full health!";
-                    }
+                    pickupHealth.Play();
+                    itemText.text = "";
+                    GameManager.health++;
+                    GameManager.lives[GameManager.health - 1].enabled = true;
+                    transform.GetComponent<MeshRenderer>().enabled = false;
+                    Destroy(gameObject, 1f);
+                }
+                else
+                {
+                    itemText.text = "Full health!";
                 }
             }
         }

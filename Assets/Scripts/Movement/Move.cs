@@ -80,7 +80,7 @@ namespace Assets.Scripts.Movement
                 transform.position += n;
 
 
-                if (playerPos >= camPos + 4f && !death)
+                if (playerPos >= camPos + 2f && !death)
                 {
                     foreach (GameObject go in movingWithPlayer)
                     {
@@ -98,7 +98,7 @@ namespace Assets.Scripts.Movement
                 Vector3 n = Vector3.left * Time.deltaTime * moveSpeed;
                 transform.position += n;
 
-                if (playerPos <= camPos - 4f && !death)
+                if (playerPos <= camPos - 2f && !death)
                 {
                     foreach (GameObject go in movingWithPlayer)
                     {

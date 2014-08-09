@@ -21,6 +21,10 @@ namespace Assets.Scripts.Colliders
                     }
                 }
             }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
 }

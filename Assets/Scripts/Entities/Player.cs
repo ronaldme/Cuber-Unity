@@ -2,12 +2,14 @@
 using System.Linq;
 using Assets.Scripts.Game;
 using Assets.Scripts.Movement;
+using Assets.Scripts.Movement.Android;
 using UnityEngine;
 
 namespace Assets.Scripts.Entities
 {
     public class Player : MonoBehaviour
     {
+        public bool isAndroid;
         public AudioSource deathSound;
         public Vector3 prePosition;
         public GUITexture[] lives;
@@ -17,8 +19,7 @@ namespace Assets.Scripts.Entities
 
         private void Start()
         {
-            GameManager.health = 3;
-
+            GameManager.IsAndroid = isAndroid;
             resetLocations = new List<Vector3>();
 
             foreach (GameObject go in moveWithPlayer)
@@ -28,6 +29,11 @@ namespace Assets.Scripts.Entities
             
             GameManager.lives = lives;
             prePosition = transform.position;
+            
+            if (isAndroid)
+            {
+                GetComponent<MoveTouch>().enabled = true;
+            }
         }
 
         private void Update()

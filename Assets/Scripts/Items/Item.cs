@@ -7,7 +7,6 @@ namespace Assets.Scripts.Items
     public class Item : MonoBehaviour
     {
         public TextMesh itemText;
-        public bool isAndroid;
         public AudioSource pickupHealth;
 
         private void Awake()
@@ -58,14 +57,7 @@ namespace Assets.Scripts.Items
         {
             if (other.name == "Player")
             {
-                if (isAndroid)
-                {
-                    itemText.text = "Click me to pick me up";
-                }
-                else
-                {
-                    itemText.text = "Press E to pick me up";
-                }
+                itemText.text = GameManager.IsAndroid ? "Click me to pick me up" : "Press E to pick me up";
             }
         }
 

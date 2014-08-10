@@ -6,7 +6,6 @@ namespace Assets.Scripts.Colliders
 {
     public class FinishCollider : MonoBehaviour
     {
-        public bool isAndroid;
         public TextMesh text;
 
         private bool isWithinCollider;
@@ -36,7 +35,7 @@ namespace Assets.Scripts.Colliders
             if (other.tag == Tags.player)
             {
                 isWithinCollider = true;
-                text.text = isAndroid ? "Click the flag to start next level!" : "Press E to start next level!";
+                text.text = GameManager.IsAndroid ? "Click the flag to start next level!" : "Press E to start next level!";
             }
         }
 

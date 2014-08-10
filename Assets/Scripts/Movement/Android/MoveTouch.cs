@@ -9,8 +9,10 @@ namespace Assets.Scripts.Movement.Android
         
         private Move move;
 
-        private void Awake()
+        private void Start()
         {
+            left.SetActive(true);
+            right.SetActive(true);
             move = GameObject.Find("Player").GetComponent<Move>();
         }
 

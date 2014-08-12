@@ -27,7 +27,6 @@ namespace Assets.Scripts.Entities
                 resetLocations.Add(go.transform.position);
             }
             
-            GameManager.lives = lives;
             prePosition = transform.position;
             
             if (isAndroid)
@@ -106,11 +105,11 @@ namespace Assets.Scripts.Entities
             }
             if (GameManager.health < 0)
             {
-                Application.LoadLevel(0);
+                GameManager.Load();
             }
             else
             {
-                GameManager.lives[GameManager.health].enabled = false;
+                lives[GameManager.health].enabled = false;
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Entities;
 using Assets.Scripts.Game;
 using UnityEngine;
 
@@ -42,7 +43,8 @@ namespace Assets.Scripts.Items
                     pickupHealth.Play();
                     itemText.text = "";
                     GameManager.health++;
-                    GameManager.lives[GameManager.health - 1].enabled = true;
+                    GameObject.FindGameObjectWithTag(Tags.player).GetComponent<Player>().lives[GameManager.health - 1]
+                        .enabled = true;
                     transform.GetComponent<MeshRenderer>().enabled = false;
                     Destroy(gameObject, 1f);
                 }

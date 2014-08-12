@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 248a118f7f27769469abffa78d81a747
+guid: b66cdb64e140a3340b6f5ccc4380ff0f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bg2
+    21300000: bg2a
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,12 +23,12 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 4096
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

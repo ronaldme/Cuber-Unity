@@ -14,8 +14,8 @@ namespace Assets.Scripts.Colliders
         {
             if (Input.GetKeyDown(KeyCode.E) && isWithinCollider)
             {
-                GameManager.levelId++;
-                Application.LoadLevel(GameManager.levelId);
+                GameManager.currentLevel++;
+                GameManager.Load();
             }
             else if (Input.GetMouseButtonDown(0))
             {
@@ -24,8 +24,8 @@ namespace Assets.Scripts.Colliders
 
                 if (hit && hit.collider == collider2D && !String.IsNullOrEmpty(text.text))
                 {
-                    GameManager.levelId++;
-                    Application.LoadLevel(GameManager.levelId);
+                    GameManager.currentLevel++;
+                    GameManager.Load();
                 }
             }
         }

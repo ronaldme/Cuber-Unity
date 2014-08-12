@@ -1,12 +1,26 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Game;
+using UnityEngine;
 
 namespace Assets.Scripts.Colliders
 {
     public class RetryCollider : MonoBehaviour
     {
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+                if (hit && hit.collider == gameObject.collider2D)
+                    GameManager.Load();
+            }
+        }
+
         void OnTriggerEnter2D(Collider2D other)
         {
-            Application.LoadLevel(1);
+            if (other.gameObject.tag == Tags.player)
+                GameManager.Load();
         }
     }
 }

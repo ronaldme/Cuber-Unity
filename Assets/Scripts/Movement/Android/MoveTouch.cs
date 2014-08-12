@@ -18,7 +18,6 @@ namespace Assets.Scripts.Movement.Android
 
         private void Update()
         {
-
             if (Input.touchCount > 0)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

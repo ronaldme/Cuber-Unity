@@ -274,7 +274,7 @@ GameObject:
   - 4: {fileID: 400028}
   m_Layer: 0
   m_Name: Fireballs
-  m_TagString: Untagged
+  m_TagString: Ability
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - 114: {fileID: 11400016}
   - 82: {fileID: 8200000}
   m_Layer: 0
-  m_Name: LifeObject
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -549,7 +549,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.331768, y: .129544258, z: 0}
+  m_LocalPosition: {x: 18.7920647, y: -2.24659061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400036}
@@ -897,7 +897,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cb3e3980ba2d4eb438e9b9218d098755, type: 2}
+  - {fileID: 2100000, guid: 90a268fe2c6327d48a61548ba6978c7a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e338d120a7097a4b8a6321aa3fb0540, type: 3}
+  m_Script: {fileID: 11500000, guid: 385c666bf94b03641a20e73f0f51d37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400008
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e338d120a7097a4b8a6321aa3fb0540, type: 3}
+  m_Script: {fileID: 11500000, guid: 385c666bf94b03641a20e73f0f51d37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400012
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e338d120a7097a4b8a6321aa3fb0540, type: 3}
+  m_Script: {fileID: 11500000, guid: 385c666bf94b03641a20e73f0f51d37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400016
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21f86a58a764e1429638c0897272ac5, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d568b437675db4d9d48935ee4394a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemText: {fileID: 10200000}
@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e338d120a7097a4b8a6321aa3fb0540, type: 3}
+  m_Script: {fileID: 11500000, guid: 385c666bf94b03641a20e73f0f51d37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21200000

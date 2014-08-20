@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Powers
+﻿namespace Assets.Scripts.Powers.Types
 {
     public enum Powers
     {

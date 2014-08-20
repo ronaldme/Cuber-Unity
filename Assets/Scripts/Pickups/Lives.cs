@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.Items
 {
-    public class Item : MonoBehaviour
+    public class Lives : MonoBehaviour, IItem
     {
         public TextMesh itemText;
         public AudioSource pickupHealth;
 
-        private void Awake()
+        private void Start()
         {
             itemText.text = "";
         }
@@ -24,20 +24,19 @@ namespace Assets.Scripts.Items
 
                 if (hit && hit.collider == collider2D)
                 {
-                    TryPickItUp();
+                    TryPickup();
                 }
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
-                TryPickItUp();
+                TryPickup();
             }
         }
 
-        private void TryPickItUp()
+        public void TryPickup()
         {
-            if (!String.IsNullOrEmpty(itemText.text))
+            if (IsPickable())
             {
-                // Check inventory or something
                 if (GameManager.health < 3)
                 {
                     pickupHealth.Play();
@@ -53,6 +52,12 @@ namespace Assets.Scripts.Items
                     itemText.text = "Full health!";
                 }
             }
+        }
+
+
+        public bool IsPickable()
+        {
+            return !String.IsNullOrEmpty(itemText.text);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

@@ -9,7 +9,7 @@ namespace Assets.Scripts.Entities.Obstacles
         public float delay;
         private float startTime;
 
-        private void Awake()
+        private void Start()
         {
             startTime = Time.time;
         }

@@ -6,6 +6,7 @@ namespace Assets.Scripts.Movement
 {
     public class Move : MonoBehaviour
     {
+        public bool IsfacingRight { get; set; }
         public GameObject left;
         public GameObject right;
         public List<GameObject> movingWithPlayer; 
@@ -17,6 +18,16 @@ namespace Assets.Scripts.Movement
         private GameObject background;
         private const float moveSpeed = 8f;
         private const float jumpForce = 400f;
+        private Material rightMaterial;
+        private Material leftMaterial;
+
+        private void Start()
+        {
+            IsfacingRight = true;
+
+            rightMaterial = gameObject.renderer.material;
+            leftMaterial = (Material)Resources.Load("player_left", typeof(Material));
+        }
 
         private void Update()
         {
@@ -73,6 +84,9 @@ namespace Assets.Scripts.Movement
         {
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || touchMovementRight)
             {
+                if (!IsfacingRight)
+                    ChangeFacingDirection();
+                
                 float playerPos = transform.position.x;
                 float camPos = Camera.main.transform.position.x;
 
@@ -92,6 +106,9 @@ namespace Assets.Scripts.Movement
             }
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) || touchMovementLeft)
             {
+                if (IsfacingRight)
+                    ChangeFacingDirection();
+
                 float playerPos = transform.position.x;
                 float camPos = Camera.main.transform.position.x;
 
@@ -108,6 +125,12 @@ namespace Assets.Scripts.Movement
                     background.transform.position += n / 1.2f;
                 }
             }
+        }
+
+        public void ChangeFacingDirection()
+        {
+            gameObject.renderer.material = IsfacingRight ? leftMaterial : rightMaterial;
+            IsfacingRight = !IsfacingRight;
         }
     }
 }

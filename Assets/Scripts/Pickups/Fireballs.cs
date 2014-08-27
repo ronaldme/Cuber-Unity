@@ -42,7 +42,7 @@ namespace Assets.Scripts.Items
         {
             if (IsPickable())
             {
-                if (ability.fireballs < 3)
+                if (ability.Fireballs < 3)
                 {
                     ability.Fill();
                     Destroy(gameObject.transform.parent.gameObject);

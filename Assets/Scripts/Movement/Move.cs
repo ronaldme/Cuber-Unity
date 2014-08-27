@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Game;
 using UnityEngine;
 
@@ -96,11 +97,7 @@ namespace Assets.Scripts.Movement
 
                 if (playerPos >= camPos + 2f && !death)
                 {
-                    foreach (GameObject go in movingWithPlayer)
-                    {
-                        go.transform.position += n;
-                    }
-
+                    movingWithPlayer.ForEach(x => x.transform.position += n);
                     background.transform.position += n / 1.2f;
                 }
             }
@@ -117,11 +114,7 @@ namespace Assets.Scripts.Movement
 
                 if (playerPos <= camPos - 2f && !death)
                 {
-                    foreach (GameObject go in movingWithPlayer)
-                    {
-                        go.transform.position += n;
-                    }
-
+                    movingWithPlayer.ForEach(x => x.transform.position += n);
                     background.transform.position += n / 1.2f;
                 }
             }

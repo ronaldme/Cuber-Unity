@@ -22,6 +22,8 @@ namespace Assets.Scripts.Entities
             GameManager.IsAndroid = isAndroid;
             resetLocations = new List<Vector3>();
 
+            moveWithPlayer.ForEach(x => resetLocations.Add(x.transform.position));
+            Debug.Log(resetLocations.Count);
             foreach (GameObject go in moveWithPlayer)
             {
                 resetLocations.Add(go.transform.position);
@@ -78,12 +80,7 @@ namespace Assets.Scripts.Entities
                 prePosition = transform.position;
             }
             else
-            {
-                foreach (var go in moveWithPlayer.Where(go => go.tag != Tags.background))
-                {
-                    go.transform.parent = null;
-                }
-            }
+                moveWithPlayer.Where(x => x.tag != Tags.background).All(y => y.transform.parent = null);
         }
 
         public void Die()

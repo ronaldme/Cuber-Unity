@@ -229,6 +229,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8100000, guid: b1a4b2323eb521f4b8ed6e3e6ae54437, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1a4b2323eb521f4b8ed6e3e6ae54437, type: 2}
   m_RootGameObject: {fileID: 1942181673}
@@ -533,7 +537,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 487466537}
   m_GameObject: {fileID: 1942181673}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1942181675
 Behaviour:
   m_ObjectHideFlags: 0

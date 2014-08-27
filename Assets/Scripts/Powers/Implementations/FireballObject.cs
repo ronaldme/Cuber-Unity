@@ -23,7 +23,6 @@ namespace Assets.Scripts.Powers.Implementations
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log(other.gameObject.name);
             if (other.gameObject.GetComponent<Destroyable>() != null)
             {
                 Destroy(other.gameObject);

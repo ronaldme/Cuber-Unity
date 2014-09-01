@@ -3,7 +3,7 @@ using Assets.Scripts.Entities;
 using Assets.Scripts.Game;
 using UnityEngine;
 
-namespace Assets.Scripts.Items
+namespace Assets.Scripts.Pickups
 {
     public class Lives : MonoBehaviour, IItem
     {

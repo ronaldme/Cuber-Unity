@@ -706,6 +706,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: moveWithPlayer.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10.7741213
@@ -761,7 +765,7 @@ Prefab:
     - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: moveWithPlayer.Array.data[3]
       value: 
-      objectReference: {fileID: 162042263}
+      objectReference: {fileID: 648273892}
     - target: {fileID: 11400000, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: left
       value: 
@@ -802,6 +806,10 @@ Prefab:
       propertyPath: fireballGameObjects.Array.data[2]
       value: 
       objectReference: {fileID: 1571334265}
+    - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: moveWithPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 162042263}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45d264a58e00a314c84737745d39775f, type: 2}
   m_RootGameObject: {fileID: 648273892}
@@ -904,8 +912,8 @@ MonoBehaviour:
   moveWithPlayer:
   - {fileID: 1931788693}
   - {fileID: 436984470}
-  - {fileID: 648273892}
   - {fileID: 162042263}
+  - {fileID: 648273892}
 --- !u!23 &648273894
 Renderer:
   m_ObjectHideFlags: 0

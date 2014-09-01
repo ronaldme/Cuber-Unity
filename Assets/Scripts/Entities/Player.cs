@@ -2,7 +2,6 @@
 using System.Linq;
 using Assets.Scripts.Game;
 using Assets.Scripts.Movement;
-using Assets.Scripts.Movement.Android;
 using UnityEngine;
 
 namespace Assets.Scripts.Entities
@@ -23,26 +22,15 @@ namespace Assets.Scripts.Entities
             resetLocations = new List<Vector3>();
 
             moveWithPlayer.ForEach(x => resetLocations.Add(x.transform.position));
-            Debug.Log(resetLocations.Count);
-            foreach (GameObject go in moveWithPlayer)
-            {
-                resetLocations.Add(go.transform.position);
-            }
-            
+            print(moveWithPlayer.Count());
             prePosition = transform.position;
-            
-            if (isAndroid)
-            {
-                GetComponent<MoveTouch>().enabled = true;
-            }
+
+            if (isAndroid) GameManager.EnableAndroid();
         }
 
         private void Update()
         {
-            if (transform.position.y < -3.5f)
-            {
-                Die();
-            }
+            if (transform.position.y < -3.5f) Die();
 
             Vector3 down = transform.TransformDirection(Vector3.down);
             RaycastHit2D hitGround = Physics2D.Raycast(transform.position + new Vector3(0f, -0.5f), down, 0.65f);
@@ -55,7 +43,7 @@ namespace Assets.Scripts.Entities
                     {
                         if (go.tag == Tags.background)
                         {
-                            Vector3 n = Vector3.right * Time.deltaTime / 1.2f;
+                            Vector3 n = Vector3.right*Time.deltaTime/1.2f;
 
                             if (transform.position.x > prePosition.x)
                             {
@@ -80,34 +68,21 @@ namespace Assets.Scripts.Entities
                 prePosition = transform.position;
             }
             else
-                moveWithPlayer.Where(x => x.tag != Tags.background).All(y => y.transform.parent = null);
+            {
+                moveWithPlayer.Where(y => y.tag != Tags.background).ToList().ForEach(x => x.transform.parent = null);
+            }
         }
 
         public void Die()
         {
             deathSound.Play();
 
-            GameManager.health--;
-
             for (int i = 0; i < moveWithPlayer.Count; i++)
             {
                 moveWithPlayer[i].transform.position = resetLocations[i];
             }
-           
-            if (GameManager.health < 1)
-            {
-                GameObject go = GameObject.Find("Level").transform.FindChild("RetryQuit").gameObject;
-                go.SetActive(true);
-                gameObject.GetComponent<Move>().death = true;
-            }
-            if (GameManager.health < 0)
-            {
-                GameManager.Load();
-            }
-            else
-            {
-                lives[GameManager.health].enabled = false;
-            }
+
+            GameManager.Die(this);
         }
     }
 }

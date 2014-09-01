@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Security.Cryptography;
-using Assets.Scripts.Entities;
 using Assets.Scripts.Game;
 using Assets.Scripts.Powers.Implementations;
 using UnityEngine;
 
-namespace Assets.Scripts.Items
+namespace Assets.Scripts.Pickups
 {
     public class Fireballs : MonoBehaviour, IItem
     {

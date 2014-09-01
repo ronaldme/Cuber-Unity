@@ -3,7 +3,6 @@
     public enum Powers
     {
         Fireball,
-        NoGravity,
         JumpHigher
     }
 }

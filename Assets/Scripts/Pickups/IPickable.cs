@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scripts.Pickups
 {
-    public interface IItem
+    public interface IPickable
     {
         void TryPickup();
         bool IsPickable();

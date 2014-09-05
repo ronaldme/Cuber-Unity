@@ -22,7 +22,6 @@ namespace Assets.Scripts.Entities
             resetLocations = new List<Vector3>();
 
             moveWithPlayer.ForEach(x => resetLocations.Add(x.transform.position));
-            print(moveWithPlayer.Count());
             prePosition = transform.position;
 
             if (isAndroid) GameManager.EnableAndroid();

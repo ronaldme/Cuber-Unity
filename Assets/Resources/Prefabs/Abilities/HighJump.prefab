@@ -12,8 +12,8 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -47,7 +47,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   m_Layer: 0
-  m_Name: Jump_higher
+  m_Name: HighJump
   m_TagString: Ability
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.421693325, y: -2.16645908, z: 0}
+  m_LocalPosition: {x: 4.77168036, y: -2.23616886, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -103,7 +103,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 90a268fe2c6327d48a61548ba6978c7a, type: 2}
+  - {fileID: 2100000, guid: df6ae787c8db58f4bb5f461730562b43, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -157,7 +157,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 7353c8f4611cdbc4fa6897e889599582, type: 3}
+  m_audioClip: {fileID: 8300000, guid: edea0c90f4d9f824885454fc22d6cdc8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -247,11 +247,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d568b437675db4d9d48935ee4394a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cd80f91e99bb8d49b5ba238b1a32495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemText: {fileID: 10200000}
-  pickupHealth: {fileID: 8200000}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

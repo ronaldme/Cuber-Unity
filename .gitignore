@@ -7,6 +7,11 @@ Library/
 # Buildversions
 BuildVersion/
 
+# Unity3D VS2013 tool
+Assets/UnityVS
+Assets/UnityVS.meta
+UnityVS.Cuber-Unity.sln.DotSettings
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #

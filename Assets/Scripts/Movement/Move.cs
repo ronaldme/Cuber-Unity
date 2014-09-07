@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Game;
 using UnityEngine;
 
@@ -7,7 +8,6 @@ namespace Assets.Scripts.Movement
     public class Move : MonoBehaviour
     {
         public bool IsfacingRight { get; set; }
-        public List<GameObject> movingWithPlayer; 
         public bool death;
         public bool touchMovementLeft;
         public bool touchMovementRight;
@@ -16,6 +16,7 @@ namespace Assets.Scripts.Movement
         private float moveSpeed = 8f;
         private Material rightMaterial;
         private Material leftMaterial;
+        private List<GameObject> movingWithPlayer; 
 
         private void Start()
         {
@@ -23,6 +24,13 @@ namespace Assets.Scripts.Movement
 
             rightMaterial = gameObject.renderer.material;
             leftMaterial = (Material)Resources.Load("player_left", typeof(Material));
+
+            movingWithPlayer = new List<GameObject>();
+
+            foreach (Transform child in GameObject.FindGameObjectWithTag(Tags.moveWithPlayer).transform.Cast<Transform>().Where(child => child.tag != Tags.background))
+            {
+                movingWithPlayer.Add(child.gameObject);
+            }
         }
 
         private void Update()

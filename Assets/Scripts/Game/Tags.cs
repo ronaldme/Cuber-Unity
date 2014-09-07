@@ -7,5 +7,6 @@
         public const string movingGroundVertical = "MovingGroundVertical";
         public const string background = "Background";
         public const string world = "World";
+        public const string moveWithPlayer = "MoveWithPlayer";
     }
 }

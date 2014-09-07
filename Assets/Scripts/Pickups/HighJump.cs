@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System.Threading;
 using Assets.Scripts.Game;
+using Assets.Scripts.Helpers;
 using Assets.Scripts.Movement;
 using UnityEngine;
 
@@ -8,27 +10,38 @@ namespace Assets.Scripts.Pickups
     public class HighJump : Pickup
     {
         private Jump jump;
+        private float timer;
+        private TextMesh countDownMesh;
+        private TextTimer textTimer;
+
+        private void Awake()
+        {
+            countDownMesh = GameObject.Find("Text").GetComponent<TextMesh>();
+        }
+
         public override void TryPickup()
         {
             audioGrab.Play();
             displayText.text = "";
 
             jump = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<Jump>();
-            jump.jumpForce *= 2;
+            jump.jumpForce *= 1.5f;
 
-            transform.GetComponent<MeshRenderer>().enabled = false;
-            StartCoroutine("DestroyEvent");
+            gameObject.renderer.enabled = false;
+
+            textTimer = GameObject.Find("AbilityTimer").GetComponent<TextTimer>();
+            textTimer.StartTimer();
+
+            StartCoroutine("StopAbility");
         }
 
-        private IEnumerator DestroyEvent()
+        private IEnumerator StopAbility()
         {
-            while (true)
-            {
-                yield return new WaitForSeconds(5f);
-                jump.jumpForce /= 2;
+            yield return new WaitForSeconds(4f);
 
-                Destroy(gameObject);
-            }
+            jump.jumpForce /= 1.5f;
+            textTimer.Stop();
+            Destroy(gameObject);
         }
     }
 }

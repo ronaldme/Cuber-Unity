@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Game;
-using Assets.Scripts.Movement;
 using UnityEngine;
 
 namespace Assets.Scripts.Entities
@@ -10,19 +9,32 @@ namespace Assets.Scripts.Entities
     {
         public bool isAndroid;
         public AudioSource deathSound;
-        public Vector3 prePosition;
+        public Vector3 resetPosition;
         public GUITexture[] lives;
-        public List<GameObject> moveWithPlayer;
 
+        private List<GameObject> moveWithPlayer;
         private List<Vector3> resetLocations;
 
         private void Start()
         {
             GameManager.IsAndroid = isAndroid;
-            resetLocations = new List<Vector3>();
 
-            moveWithPlayer.ForEach(x => resetLocations.Add(x.transform.position));
-            prePosition = transform.position;
+            resetLocations = new List<Vector3>();
+            moveWithPlayer = new List<GameObject>();
+
+            var movingWithPlayer = GameObject.FindGameObjectWithTag(Tags.moveWithPlayer);
+
+            foreach (Transform child in movingWithPlayer.transform)
+            {
+                moveWithPlayer.Add(child.gameObject);
+                resetLocations.Add(child.transform.position);
+            }
+
+            // Add the player
+            moveWithPlayer.Add(gameObject);
+            resetLocations.Add(transform.position);
+
+            resetPosition = transform.position;
 
             if (isAndroid) GameManager.EnableAndroid();
         }
@@ -44,7 +56,7 @@ namespace Assets.Scripts.Entities
                         {
                             Vector3 n = Vector3.right*Time.deltaTime/1.2f;
 
-                            if (transform.position.x > prePosition.x)
+                            if (transform.position.x > resetPosition.x)
                             {
                                 go.transform.position += n;
                             }
@@ -64,7 +76,7 @@ namespace Assets.Scripts.Entities
                     transform.parent = hitGround.transform;
                 }
 
-                prePosition = transform.position;
+                resetPosition = transform.position;
             }
             else
             {

@@ -2,6 +2,6 @@
 
 namespace Assets.Scripts.Game
 {
-    // Markerclass
+    // Markerclass for destroyable objects
     public class Destroyable : MonoBehaviour { }
 }

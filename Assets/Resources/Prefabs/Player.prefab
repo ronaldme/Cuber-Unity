@@ -20,6 +20,7 @@ GameObject:
   - 82: {fileID: 8200006}
   - 82: {fileID: 8200004}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -335,13 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4119378889551cd42b590fd7836fab3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 0}
-  right: {fileID: 0}
-  movingWithPlayer:
-  - {fileID: 0}
-  - {fileID: 0}
   death: 0
-  jumpSound: {fileID: 8200006}
   touchMovementLeft: 0
   touchMovementRight: 0
 --- !u!114 &11400002
@@ -357,15 +352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAndroid: 0
   deathSound: {fileID: 8200004}
-  prePosition: {x: 0, y: 0, z: 0}
+  resetPosition: {x: 0, y: 0, z: 0}
   lives:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  moveWithPlayer:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 100000}
   - {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -395,6 +385,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8a79829508ac04e9f84d678d5828f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: {fileID: 0}
+  right: {fileID: 0}
+  jumpSound: {fileID: 8200006}
+  jumpForce: 400
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

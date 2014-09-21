@@ -6,7 +6,11 @@ namespace Assets.Scripts.Game
     {
         private void Awake()
         {
-            GameManager.currentLevel = gameObject.name[gameObject.name.Length - 1] - 48;
+            int currentLevel = gameObject.name[gameObject.name.Length - 1] - 48;
+            
+            GameManager.currentLevel = currentLevel;
+            GameObject.FindGameObjectWithTag(Tags.background).GetComponent<SpriteRenderer>().sprite =
+                Resources.Load<Sprite>("Backgrounds/bg" + currentLevel);
         }
 
         private void Update()

@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 1a932db9d5fc69e4fa4862bd7dffa699
+guid: d7c89f1042a0b0b4bbd5035a97eebe75
 TextureImporter:
   fileIDToRecycleName:
-    21300000: death_jumper
+    21300000: pickup_highjump
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

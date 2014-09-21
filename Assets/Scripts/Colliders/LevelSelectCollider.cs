@@ -1,12 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Colliders
 {
     public class LevelSelectCollider : MonoBehaviour
     {
-        public List<GameObject> levels;
+        private List<GameObject> levels;
+ 
+        private void Awake()
+        {
+            levels = new List<GameObject>();
+
+            foreach (Transform child in GameObject.Find("Levels").transform) 
+                levels.Add(child.gameObject);
+        }
 
         private void Update()
         {

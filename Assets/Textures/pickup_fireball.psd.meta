@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 581a285026bf40547865392d3b6f4e4a
+guid: 1346d3eeb5d090c48baf20beb715701d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Enemy1
+    21300000: pickup_fireball
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

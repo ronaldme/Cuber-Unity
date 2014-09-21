@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 07575d5435699e248b7a0fe2788e6665
+guid: b408d1128851bff4fa4cb3e238ebb7e4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: extra_life
+    21300000: enemy_canon
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

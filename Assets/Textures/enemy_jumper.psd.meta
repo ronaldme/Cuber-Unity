@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: d21b356295c09844abceb1a70fbfca54
+guid: fa86171cd3fca4e4c950a9650e3b1a2c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bg2
+    21300000: enemy_jumper
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,12 +23,12 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 4096
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

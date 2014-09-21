@@ -23,7 +23,7 @@ namespace Assets.Scripts.Movement
             IsfacingRight = true;
 
             rightMaterial = gameObject.renderer.material;
-            leftMaterial = (Material)Resources.Load("player_left", typeof(Material));
+            leftMaterial = Resources.Load<Material>("player_left");
 
             movingWithPlayer = new List<GameObject>();
 

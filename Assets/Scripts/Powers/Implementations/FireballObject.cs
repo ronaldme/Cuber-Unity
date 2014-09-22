@@ -5,6 +5,8 @@ namespace Assets.Scripts.Powers.Implementations
 {
     public class FireballObject : MonoBehaviour
     {
+        public AudioSource fireballCollision;
+
         private float currentTime;
         private const float addTime = 1f;
 
@@ -26,8 +28,12 @@ namespace Assets.Scripts.Powers.Implementations
             if (other.gameObject.GetComponent<Destroyable>() != null)
             {
                 Destroy(other.gameObject);
+                fireballCollision.Play();
             }
-            Destroy(gameObject);
+
+            renderer.enabled = false;
+            renderer.collider2D.enabled = false;
+            Destroy(gameObject, 1f);
         }
     }
 }

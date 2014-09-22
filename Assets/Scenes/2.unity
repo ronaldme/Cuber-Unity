@@ -1412,7 +1412,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 1851278103}
   m_GameObject: {fileID: 763107391}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 75ccb89f97154e34c84bd79fc77f55f7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -1593,7 +1593,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8100000, guid: e8cca2993b02c2d40b1621ad7c75652a, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8cca2993b02c2d40b1621ad7c75652a, type: 2}
@@ -2586,7 +2586,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 1851278103}
   m_GameObject: {fileID: 1580940541}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 75ccb89f97154e34c84bd79fc77f55f7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -3013,7 +3013,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 817621717}
   m_GameObject: {fileID: 1664512908}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!92 &1664512912
 Behaviour:
   m_ObjectHideFlags: 0
@@ -3415,6 +3415,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13100002, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
+    - target: {fileID: 13100006, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
+    - target: {fileID: 13100008, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
+    - target: {fileID: 100018, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f35547ed310a6a64181ee0dd63ef5bff, type: 2}
   m_RootGameObject: {fileID: 1693989891}
@@ -3456,7 +3480,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 1851278103}
   m_GameObject: {fileID: 1883241280}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 75ccb89f97154e34c84bd79fc77f55f7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2

@@ -25,7 +25,7 @@ namespace Assets.Scripts.Powers.Implementations
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.GetComponent<Destroyable>() != null)
+            if (other.gameObject.tag == Tags.enemy)
             {
                 Destroy(other.gameObject);
                 fireballCollision.Play();

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Entities;
+﻿using System;
+using Assets.Scripts.Entities;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Movement.Android;
 using UnityEngine;
@@ -9,7 +10,6 @@ namespace Assets.Scripts.Game
     {
         public static int currentLevel = 1;
         public static int health = 3;
-
         public static bool IsAndroid { get; set; }
 
         public static void Load()

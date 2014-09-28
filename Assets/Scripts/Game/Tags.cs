@@ -8,5 +8,6 @@
         public const string background = "Background";
         public const string world = "World";
         public const string moveWithPlayer = "MoveWithPlayer";
+        public const string enemy = "Enemy";
     }
 }

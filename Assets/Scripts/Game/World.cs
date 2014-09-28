@@ -15,8 +15,7 @@ namespace Assets.Scripts.Game
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                GameManager.LoadMenu();
+            if (Input.GetKeyDown(KeyCode.Escape)) GameManager.LoadMenu();
         }
     }
 }

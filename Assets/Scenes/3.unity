@@ -660,9 +660,9 @@ MonoBehaviour:
   deathSound: {fileID: 648273900}
   resetPosition: {x: 0, y: 0, z: 0}
   lives:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 139719583}
+  - {fileID: 1008841132}
+  - {fileID: 851523460}
 --- !u!23 &648273894
 Renderer:
   m_ObjectHideFlags: 0
@@ -1559,15 +1559,15 @@ Prefab:
     - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: lives.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 139719583}
     - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: lives.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1008841132}
     - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: lives.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 851523460}
     - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: moveWithPlayer.Array.data[0]
       value: 

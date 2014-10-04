@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Game;
-using Assets.Scripts.Helpers;
+﻿using Assets.Scripts.Helpers;
 using UnityEngine;
 
 namespace Assets.Scripts.Entities.Enemies

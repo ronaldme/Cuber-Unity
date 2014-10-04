@@ -6,13 +6,14 @@ namespace Assets.Scripts.Movement.Android
     {
         public GameObject left;
         public GameObject right;
-        
+        public GameObject android;
+   
         private Move move;
 
         private void Start()
         {
-            left.SetActive(true);
-            right.SetActive(true);
+            print("test");
+            android.SetActive(true);
             move = GameObject.Find("Player").GetComponent<Move>();
         }
 
@@ -27,18 +28,13 @@ namespace Assets.Scripts.Movement.Android
                 {
                     if (hit.collider == left.collider)
                     {
-                        move.touchMovementLeft = true;
+                        move.MoveLeft();
                     }
                     else if (hit.collider == right.collider)
                     {
-                        move.touchMovementRight = true;
+                        move.MoveRight();
                     }
                 }
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                move.touchMovementLeft = false;
-                move.touchMovementRight = false;
             }
         }
     }

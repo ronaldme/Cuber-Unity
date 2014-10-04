@@ -1,5 +1,5 @@
-﻿using System;
-using Assets.Scripts.Entities;
+﻿using Assets.Scripts.Entities;
+using Assets.Scripts.Helpers;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Movement.Android;
 using UnityEngine;
@@ -24,10 +24,14 @@ namespace Assets.Scripts.Game
             Application.LoadLevel(0);
         }
 
-        public static void EnableAndroid()
+        public static void EnableAndroid(bool isEnabled)
         {
-            GameObject player = GameObject.FindWithTag(Tags.player);
-            player.GetComponent<MoveTouch>().enabled = true;
+            if (isEnabled)
+            {
+                IsAndroid = true;
+                var player = GameObject.FindWithTag(Tags.player);
+                player.GetComponent<MoveTouch>().enabled = true;
+            }
         }
 
         public static void Die(Player player)

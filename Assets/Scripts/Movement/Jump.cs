@@ -8,26 +8,25 @@ namespace Assets.Scripts.Movement
         public GameObject right;
         public AudioSource jumpSound;
         public float jumpForce = 400f;
+        private const float distance = 0.1f;
 
         private void Update()
         {
-            CheckInput();
+            HandleInput();
         }
 
-        private void CheckInput()
+        private void HandleInput()
         {
             if (Input.touchCount > 0)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-                if (Physics.Raycast(ray.origin, ray.direction, out hit))
+                if (hit.collider != left.collider2D && hit.collider != right.collider2D)
                 {
-                    if (hit.collider != left.collider && hit.collider != right.collider)
-                    {
-                        PerformJump();
-                    }
+                    PerformJump();
                 }
+                
             }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -39,13 +38,12 @@ namespace Assets.Scripts.Movement
         {
             Vector3 down = transform.TransformDirection(Vector3.down);
 
-            Vector3 vecBack = new Vector3(0.45f, -0.5f);
-            Vector3 vecForward = new Vector3(-0.45f, -0.5f);
+            var vecBack = new Vector3(0.45f, -0.5f);
+            var vecForward = new Vector3(-0.45f, -0.5f);
+            
 
-            float dis = 0.1f;
-
-            var hitBack = Physics2D.Raycast(transform.position + vecBack, down, dis);
-            var hitForward = Physics2D.Raycast(transform.position + vecForward, down, dis);
+            var hitBack = Physics2D.Raycast(transform.position + vecBack, down, distance);
+            var hitForward = Physics2D.Raycast(transform.position + vecForward, down, distance);
 
             if ((hitBack || hitForward) && (hitBack.collider != null || hitForward.collider != null))
             {

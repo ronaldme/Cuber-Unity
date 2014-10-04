@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Threading;
-using Assets.Scripts.Game;
 using Assets.Scripts.Helpers;
 using Assets.Scripts.Movement;
 using UnityEngine;
@@ -11,13 +9,7 @@ namespace Assets.Scripts.Pickups
     {
         private Jump jump;
         private float timer;
-        private TextMesh countDownMesh;
         private TextTimer textTimer;
-
-        private void Awake()
-        {
-            countDownMesh = GameObject.Find("Text").GetComponent<TextMesh>();
-        }
 
         public override void TryPickup()
         {

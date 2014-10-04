@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f69398773132845a17a0731f3c015f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAndroid: 0
+  isAndroid: 1
   deathSound: {fileID: 648273904}
   resetPosition: {x: 0, y: 0, z: 0}
   lives:
@@ -721,8 +721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  touchMovementLeft: 0
-  touchMovementRight: 0
 --- !u!114 &648273900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,8 +733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4b37cc67b66ed469c9794dac77b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 0}
-  right: {fileID: 0}
+  left: {fileID: 1735071783}
+  right: {fileID: 2022602917}
+  android: {fileID: 1897165790}
 --- !u!82 &648273901
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1573,7 +1572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9c363a395ef964c9f5b322eddf328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 690790367}
 --- !u!1 &1054174256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,6 +2720,26 @@ Prefab:
       propertyPath: fireballGameObjects.Array.data[2]
       value: 
       objectReference: {fileID: 1571334265}
+    - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: isAndroid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: android
+      value: 
+      objectReference: {fileID: 1897165790}
+    - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 1735071783}
+    - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 2022602917}
+    - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45d264a58e00a314c84737745d39775f, type: 2}
   m_RootGameObject: {fileID: 648273892}
@@ -2744,7 +2762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1735071784
 Transform:
   m_ObjectHideFlags: 0
@@ -3064,7 +3082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1897165791
 Transform:
   m_ObjectHideFlags: 0
@@ -3256,7 +3274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2022602918
 Transform:
   m_ObjectHideFlags: 0
@@ -3349,6 +3367,10 @@ Prefab:
     - target: {fileID: 400004, guid: e8cca2993b02c2d40b1621ad7c75652a, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: e8cca2993b02c2d40b1621ad7c75652a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8cca2993b02c2d40b1621ad7c75652a, type: 2}

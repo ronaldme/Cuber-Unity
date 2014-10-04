@@ -1,13 +1,13 @@
 ﻿using System;
 using Assets.Scripts.Game;
+using Assets.Scripts.Helpers;
 using UnityEngine;
 
 namespace Assets.Scripts.Colliders
 {
     public class FinishCollider : MonoBehaviour
     {
-        public TextMesh text;
-
+        private TextMesh text;
         private bool isWithinCollider;
 
         private void Update()

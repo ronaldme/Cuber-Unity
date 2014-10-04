@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Game
+﻿namespace Assets.Scripts.Helpers
 {
     public class Tags
     {

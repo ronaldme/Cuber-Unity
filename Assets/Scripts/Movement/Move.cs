@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Assets.Scripts.Game;
+using Assets.Scripts.Helpers;
 using UnityEngine;
 
 namespace Assets.Scripts.Movement
@@ -9,8 +9,6 @@ namespace Assets.Scripts.Movement
     {
         public bool IsfacingRight { get; set; }
         public bool death;
-        public bool touchMovementLeft;
-        public bool touchMovementRight;
 
         private GameObject background;
         private float moveSpeed = 8f;
@@ -31,58 +29,62 @@ namespace Assets.Scripts.Movement
             {
                 movingWithPlayer.Add(child.gameObject);
             }
+
+            background = GameObject.FindWithTag(Tags.background);
         }
 
         private void Update()
         {
             Movement();
-
-            if (background == null)
-            {
-                background = GameObject.FindWithTag(Tags.background);
-            }
         }
 
         private void Movement()
         {
-            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || touchMovementRight)
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                if (!IsfacingRight)
-                    ChangeFacingDirection();
-                
-                float playerPos = transform.position.x;
-                float camPos = Camera.main.transform.position.x;
-
-                Vector3 n = Vector3.right * Time.deltaTime * moveSpeed;
-                transform.position += n;
-
-
-                if (playerPos >= camPos + 2f && !death)
-                {
-                    movingWithPlayer.ForEach(x => x.transform.position += n);
-                    background.transform.position += n / 1.2f;
-                }
+                MoveRight();
             }
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) || touchMovementLeft)
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                if (IsfacingRight)
-                    ChangeFacingDirection();
-
-                float playerPos = transform.position.x;
-                float camPos = Camera.main.transform.position.x;
-
-                Vector3 n = Vector3.left * Time.deltaTime * moveSpeed;
-                transform.position += n;
-
-                if (playerPos <= camPos - 2f && !death)
-                {
-                    movingWithPlayer.ForEach(x => x.transform.position += n);
-                    background.transform.position += n / 1.2f;
-                }
+                MoveLeft();
             }
         }
 
-        public void ChangeFacingDirection()
+        public void MoveRight()
+        {
+            if(!IsfacingRight) ChangeFacingDirection();
+
+            float playerPos = transform.position.x;
+            float camPos = Camera.main.transform.position.x;
+
+            Vector3 n = Vector3.right * Time.deltaTime * moveSpeed;
+            transform.position += n;
+
+            if (playerPos >= camPos + 2f && !death)
+            {
+                movingWithPlayer.ForEach(x => x.transform.position += n);
+                background.transform.position += n / 1.2f;
+            }
+        }
+
+        public void MoveLeft()
+        {
+            if (IsfacingRight) ChangeFacingDirection();
+
+            float playerPos = transform.position.x;
+            float camPos = Camera.main.transform.position.x;
+
+            Vector3 n = Vector3.left * Time.deltaTime * moveSpeed;
+            transform.position += n;
+
+            if (playerPos <= camPos - 2f && !death)
+            {
+                movingWithPlayer.ForEach(x => x.transform.position += n);
+                background.transform.position += n / 1.2f;
+            }
+        }
+
+        private void ChangeFacingDirection()
         {
             gameObject.renderer.material = IsfacingRight ? leftMaterial : rightMaterial;
             IsfacingRight = !IsfacingRight;

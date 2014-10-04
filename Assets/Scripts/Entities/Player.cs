@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Game;
+using Assets.Scripts.Helpers;
 using UnityEngine;
 
 namespace Assets.Scripts.Entities
@@ -17,8 +18,6 @@ namespace Assets.Scripts.Entities
 
         private void Start()
         {
-            GameManager.IsAndroid = isAndroid;
-
             resetLocations = new List<Vector3>();
             moveWithPlayer = new List<GameObject>();
 
@@ -35,8 +34,7 @@ namespace Assets.Scripts.Entities
             resetLocations.Add(transform.position);
 
             resetPosition = transform.position;
-
-            if (isAndroid) GameManager.EnableAndroid();
+            GameManager.EnableAndroid(isAndroid);
         }
 
         private void Update()

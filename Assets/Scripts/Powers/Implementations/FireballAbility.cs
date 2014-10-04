@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Assets.Scripts.Helpers;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Powers.Interfaces;
@@ -27,7 +26,7 @@ namespace Assets.Scripts.Powers.Implementations
 
         public void UseAbility()
         {
-            var go = (GameObject)Instantiate(Resources.Load<GameObject>(Prefabs.fireball));
+            var fireBall = (GameObject)Instantiate(Resources.Load<GameObject>(Prefabs.fireball));
 
             var multiplier = 1;
             if (!move.IsfacingRight)
@@ -35,8 +34,8 @@ namespace Assets.Scripts.Powers.Implementations
                 multiplier = -1;
             }
 
-            go.transform.position = transform.position + new Vector3(multiplier, 0f, 0f);
-            go.transform.rigidbody2D.AddForce(new Vector2(1000f * multiplier, 0f));
+            fireBall.transform.position = transform.position + new Vector3(multiplier, 0f, 0f);
+            fireBall.transform.rigidbody2D.AddForce(new Vector2(1000f * multiplier, 0f));
 
             fireballGameObjects[Fireballs - 1].guiTexture.enabled = false;
             Fireballs--;

@@ -31,19 +31,13 @@ namespace Assets.Scripts.Entities.Enemies
             {
                 transform.position = Vector3.MoveTowards(transform.position, leftHit.transform.position + new Vector3(1.5f, 0f), 1f * Time.deltaTime);
 
-                var rayCastShoot = transform.position + new Vector3(-1.5f, 0f);
-                var withingShootRange = Physics2D.Raycast(transform.position + Vector3.left, rayCastShoot);
-
                 if (!facingLeft)
                 {
                     transform.Rotate(new Vector3(0, -180, 0)); 
                     facingLeft = true;
                 }
 
-                if (withingShootRange.collider != null)
-                {
-                    TryShoot();
-                }
+                RayCastOnPlayer(new Vector3(-1.5f, 0f), Vector3.left);
             }
             if (rightHit.collider != null && rightHit.collider.tag == Tags.player)
             {
@@ -54,7 +48,17 @@ namespace Assets.Scripts.Entities.Enemies
                     transform.Rotate(new Vector3(0, 180, 0)); 
                     facingLeft = false;
                 }
+
+                RayCastOnPlayer(new Vector3(1.5f, 0f), Vector3.right);
             }
+        }
+
+        private void RayCastOnPlayer(Vector3 range, Vector3 direction)
+        {
+            var rayCastShoot = transform.position + range;
+            var withinRange = Physics2D.Raycast(transform.position + direction, rayCastShoot);
+
+            if (withinRange.collider != null) TryShoot();
         }
 
         private void TryShoot()

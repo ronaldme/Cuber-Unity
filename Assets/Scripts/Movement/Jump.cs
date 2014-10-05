@@ -17,24 +17,13 @@ namespace Assets.Scripts.Movement
 
         private void HandleInput()
         {
-            if (Input.touchCount > 0)
-            {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                var hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-                if (hit.collider != left.collider2D && hit.collider != right.collider2D)
-                {
-                    PerformJump();
-                }
-                
-            }
-            else if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 PerformJump();
             }
         }
 
-        private void PerformJump()
+        public void PerformJump()
         {
             Vector3 down = transform.TransformDirection(Vector3.down);
 

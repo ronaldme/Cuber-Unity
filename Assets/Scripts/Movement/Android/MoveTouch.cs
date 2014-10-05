@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using Assets.Scripts.Helpers;
+using UnityEngine;
 
 namespace Assets.Scripts.Movement.Android
 {
@@ -9,30 +11,47 @@ namespace Assets.Scripts.Movement.Android
         public GameObject android;
    
         private Move move;
+        private Jump jump;
 
         private void Start()
         {
             print("test");
             android.SetActive(true);
-            move = GameObject.Find("Player").GetComponent<Move>();
+            move = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<Move>();
+            jump = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<Jump>();
         }
 
         private void Update()
         {
-            if (Input.touchCount > 0)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
+            var input = Input.touches;
 
-                if (Physics.Raycast(ray.origin, ray.direction, out hit))
+            if(input.Length > 0)
+            {
+                bool isMoving = false;
+                bool isJumping = false;
+
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    if (hit.collider == left.collider)
+                    if ((input[i].phase == TouchPhase.Began || input[i].phase == TouchPhase.Stationary) && !isMoving)
                     {
-                        move.MoveLeft();
+                        if (Collisions.IsHit(left))
+                        {
+                            move.MoveLeft();
+                            isMoving = true;
+                        }
+                        else if (Collisions.IsHit(right))
+                        {
+                            move.MoveRight();
+                            isMoving = true;
+                        }
                     }
-                    else if (hit.collider == right.collider)
+                    if (input[i].phase == TouchPhase.Began && !isJumping)
                     {
-                        move.MoveRight();
+                        if (!Collisions.IsHit(left) && !Collisions.IsHit(right))
+                        {
+                            jump.PerformJump();
+                            isJumping = true;
+                        }
                     }
                 }
             }

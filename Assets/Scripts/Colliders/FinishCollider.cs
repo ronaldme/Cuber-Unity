@@ -10,6 +10,11 @@ namespace Assets.Scripts.Colliders
         private TextMesh text;
         private bool isWithinCollider;
 
+        private void Start()
+        {
+            text = GameObject.Find("ItemInfo").GetComponent<TextMesh>();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.E) && isWithinCollider)
@@ -19,10 +24,7 @@ namespace Assets.Scripts.Colliders
             }
             else if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                var hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-                if (hit && hit.collider == collider2D && !String.IsNullOrEmpty(text.text))
+                if (Collisions.IsHit(gameObject) && !String.IsNullOrEmpty(text.text))
                 {
                     GameManager.currentLevel++;
                     GameManager.Load();

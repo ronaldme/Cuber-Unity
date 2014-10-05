@@ -24,10 +24,7 @@ namespace Assets.Scripts.Pickups
         {
             if (Input.GetMouseButtonDown(0) && IsPickable())
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                var hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-                if (hit && hit.collider == collider2D)
+                if (Collisions.IsHit2D(gameObject))
                 {
                     TryPickup();
                 }

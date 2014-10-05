@@ -10,10 +10,7 @@ namespace Assets.Scripts.Colliders
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                var hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-                if (hit && hit.collider == gameObject.collider2D)
+                if (Collisions.IsHit2D(gameObject))
                     GameManager.Load();
             }
         }

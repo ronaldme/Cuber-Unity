@@ -24,7 +24,7 @@ namespace Assets.Scripts.Colliders
             }
             else if (Input.GetMouseButtonDown(0))
             {
-                if (Collisions.IsHit(gameObject) && !String.IsNullOrEmpty(text.text))
+                if (Collisions.IsHit2D(gameObject) && !String.IsNullOrEmpty(text.text))
                 {
                     GameManager.currentLevel++;
                     GameManager.Load();

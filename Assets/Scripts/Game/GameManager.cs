@@ -12,6 +12,11 @@ namespace Assets.Scripts.Game
         public static int health = 3;
         public static bool IsAndroid { get; set; }
 
+        static GameManager()
+        {
+            IsAndroid = Application.platform == RuntimePlatform.Android;
+        }
+
         public static void Load()
         {
             health = 3;

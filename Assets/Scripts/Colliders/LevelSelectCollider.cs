@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Assets.Scripts.Game;
 using Assets.Scripts.Helpers;
 using UnityEngine;
 
@@ -7,13 +6,10 @@ namespace Assets.Scripts.Colliders
 {
     public class LevelSelectCollider : MonoBehaviour
     {
-        public bool isAndroid;
         private List<GameObject> levels;
  
         private void Awake()
-        {
-            GameManager.IsAndroid = isAndroid;
-
+        {           
             levels = new List<GameObject>();
 
             foreach (Transform child in GameObject.Find("Levels").transform) 

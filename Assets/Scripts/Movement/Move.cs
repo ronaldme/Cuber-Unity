@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Game;
 using Assets.Scripts.Helpers;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Assets.Scripts.Movement
         public bool death;
 
         private GameObject background;
-        private float moveSpeed = 8f;
+        private const float moveSpeed = 8f;
         private Material rightMaterial;
         private Material leftMaterial;
         private List<GameObject> movingWithPlayer; 
@@ -21,11 +22,11 @@ namespace Assets.Scripts.Movement
             IsfacingRight = true;
 
             rightMaterial = gameObject.renderer.material;
-            leftMaterial = Resources.Load<Material>("player_left");
+            leftMaterial = GameManager.currentLevel > 2 ? Resources.Load<Material>("Materials/player_left_pirate") : Resources.Load<Material>("Materials/player_left");
 
             movingWithPlayer = new List<GameObject>();
 
-            foreach (Transform child in GameObject.FindGameObjectWithTag(Tags.moveWithPlayer).transform.Cast<Transform>().Where(child => child.tag != Tags.background))
+            foreach (var child in GameObject.FindGameObjectWithTag(Tags.moveWithPlayer).transform.Cast<Transform>().Where(child => child.tag != Tags.background))
             {
                 movingWithPlayer.Add(child.gameObject);
             }

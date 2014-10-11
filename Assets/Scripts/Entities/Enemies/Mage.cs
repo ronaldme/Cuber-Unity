@@ -8,6 +8,7 @@ namespace Assets.Scripts.Entities.Enemies
         private bool facingLeft;
         private float timer;
         private float resetTimer = 1f;
+        private bool canShoot = true;
 
         private void Start()
         {
@@ -21,11 +22,8 @@ namespace Assets.Scripts.Entities.Enemies
         }
 
         private void MoveTowardsPlayer()
-        {
-            var rayCastDirection = transform.position + new Vector3(-2f, 0f);
-
-            var leftHit = Physics2D.Raycast(transform.position + Vector3.left, rayCastDirection);
-            var rightHit = Physics2D.Raycast(transform.position - Vector3.left, -rayCastDirection);
+        {   var leftHit = Physics2D.Raycast(transform.position + Vector3.left, Vector3.left, 10f);
+            var rightHit = Physics2D.Raycast(transform.position - Vector3.left, Vector3.right, 10f);
 
             if (leftHit.collider != null && leftHit.collider.tag == Tags.player)
             {
@@ -37,7 +35,7 @@ namespace Assets.Scripts.Entities.Enemies
                     facingLeft = true;
                 }
 
-                RayCastOnPlayer(new Vector3(-1.5f, 0f), Vector3.left);
+                RayCastOnPlayer(new Vector3(-8f, 0f), Vector3.left);
             }
             if (rightHit.collider != null && rightHit.collider.tag == Tags.player)
             {
@@ -49,7 +47,7 @@ namespace Assets.Scripts.Entities.Enemies
                     facingLeft = false;
                 }
 
-                RayCastOnPlayer(new Vector3(1.5f, 0f), Vector3.right);
+                RayCastOnPlayer(new Vector3(8f, 0f), Vector3.right);
             }
         }
 
@@ -69,8 +67,6 @@ namespace Assets.Scripts.Entities.Enemies
             go.transform.position = transform.position;
             go.rigidbody2D.AddForce(new Vector2(facingLeft ? -1000f : 1000f, 0f));
         }
-
-        private bool canShoot = true;
 
         private bool CanShoot()
         {

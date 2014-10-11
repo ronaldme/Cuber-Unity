@@ -64,8 +64,8 @@ namespace Assets.Scripts.Entities.Enemies
             if (!CanShoot()) return;
 
             var go = (GameObject)Instantiate(Resources.Load<GameObject>(Prefabs.mageAttack));
-            go.transform.position = transform.position;
-            go.rigidbody2D.AddForce(new Vector2(facingLeft ? -1000f : 1000f, 0f));
+            go.transform.position = transform.position + (facingLeft ? Vector3.left : Vector3.right);
+            go.rigidbody2D.AddForce(new Vector2(facingLeft ? -500f : 500f, 0f));
         }
 
         private bool CanShoot()

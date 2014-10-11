@@ -8,7 +8,6 @@ namespace Assets.Scripts.Entities
 {
     public class Player : MonoBehaviour
     {
-        public bool isAndroid;
         public AudioSource deathSound;
         public Vector3 resetPosition;
         public GUITexture[] lives;
@@ -34,7 +33,7 @@ namespace Assets.Scripts.Entities
             resetLocations.Add(transform.position);
 
             resetPosition = transform.position;
-            GameManager.EnableAndroid(isAndroid);
+            GameManager.EnableAndroid();
         }
 
         private void Update()

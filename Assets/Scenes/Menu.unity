@@ -297,6 +297,10 @@ Prefab:
       propertyPath: m_Name
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4b3ff21e8e79172448b16c3bda2b48cf, type: 2}
+      propertyPath: isAndroid
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b3ff21e8e79172448b16c3bda2b48cf, type: 2}
   m_RootGameObject: {fileID: 1992026743}
@@ -726,3 +730,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad1d23a4be6fe44d96b48b29d8eab39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAndroid: 0

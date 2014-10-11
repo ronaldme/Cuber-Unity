@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &44556760
 Transform:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 1433715182}
   m_GameObject: {fileID: 262334178}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 75ccb89f97154e34c84bd79fc77f55f7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -656,7 +656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f69398773132845a17a0731f3c015f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAndroid: 0
   deathSound: {fileID: 648273900}
   resetPosition: {x: 0, y: 0, z: 0}
   lives:
@@ -745,8 +744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  touchMovementLeft: 0
-  touchMovementRight: 0
 --- !u!82 &648273900
 AudioSource:
   m_ObjectHideFlags: 0
@@ -818,8 +815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4b37cc67b66ed469c9794dac77b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 0}
-  right: {fileID: 0}
+  left: {fileID: 2129837854}
+  right: {fileID: 44556759}
+  android: {fileID: 2124275925}
 --- !u!82 &648273902
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1591,11 +1589,11 @@ Prefab:
     - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: left
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2129837854}
     - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: right
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 44556759}
     - target: {fileID: 11400006, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: fireballGameObjects.Array.data[0]
       value: 
@@ -1620,6 +1618,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cd10aaccba5c5b042b942bb21488a81e, type: 2}
+    - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
+      propertyPath: android
+      value: 
+      objectReference: {fileID: 2124275925}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45d264a58e00a314c84737745d39775f, type: 2}
   m_RootGameObject: {fileID: 648273892}
@@ -1884,7 +1886,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 1433715182}
   m_GameObject: {fileID: 1665632781}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 75ccb89f97154e34c84bd79fc77f55f7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -2020,7 +2022,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 1433715182}
   m_GameObject: {fileID: 1956593688}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 75ccb89f97154e34c84bd79fc77f55f7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3114de1a9271652479f20eaf9c8e735b, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -2074,7 +2076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2124275926
 Transform:
   m_ObjectHideFlags: 0
@@ -2106,7 +2108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2129837855
 Transform:
   m_ObjectHideFlags: 0

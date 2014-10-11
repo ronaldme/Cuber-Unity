@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f69398773132845a17a0731f3c015f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAndroid: 1
+  isAndroid: 0
   deathSound: {fileID: 648273904}
   resetPosition: {x: 0, y: 0, z: 0}
   lives:
@@ -2722,7 +2722,7 @@ Prefab:
       objectReference: {fileID: 1571334265}
     - target: {fileID: 11400002, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: isAndroid
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 45d264a58e00a314c84737745d39775f, type: 2}
       propertyPath: android

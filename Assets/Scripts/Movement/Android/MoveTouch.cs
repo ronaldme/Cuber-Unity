@@ -15,7 +15,6 @@ namespace Assets.Scripts.Movement.Android
 
         private void Start()
         {
-            print("test");
             android.SetActive(true);
             move = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<Move>();
             jump = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<Jump>();

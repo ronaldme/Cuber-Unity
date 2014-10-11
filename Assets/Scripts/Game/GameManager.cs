@@ -24,11 +24,10 @@ namespace Assets.Scripts.Game
             Application.LoadLevel(0);
         }
 
-        public static void EnableAndroid(bool isEnabled)
+        public static void EnableAndroid()
         {
-            if (isEnabled)
+            if (IsAndroid)
             {
-                IsAndroid = true;
                 var player = GameObject.FindWithTag(Tags.player);
                 player.GetComponent<MoveTouch>().enabled = true;
             }
@@ -36,6 +35,7 @@ namespace Assets.Scripts.Game
 
         public static void Die(Player player)
         {
+            player.rigidbody2D.velocity = Vector2.zero;
             health--;
 
             if (health < 1)
